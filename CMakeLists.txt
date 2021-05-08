@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.14)
+project(turmite)
+set(CMAKE_CXX_STANDARD 11)
+add_executable(${PROJECT_NAME} main.cpp PixelArray.cpp PixelArray.h Turmite.cpp Turmite.h World.cpp World.h CmdParser.cpp CmdParser.h)
+set(CMAKE_EXE_LINKER_FLAGS "-static-libgcc -static-libstdc++ -static")
+find_package(SFML 2 REQUIRED system window graphics network audio)
+target_link_libraries(${PROJECT_NAME} sfml-audio sfml-graphics sfml-window sfml-system)
